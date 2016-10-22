@@ -19,6 +19,10 @@ class Athlete
     @id = athlete_data.first['id'].to_i
   end
 
+  def team()
+    sql = "GET * FROM teams WHERE id = #{@team_id}"
+  end
+
   def self.delete_all()
     sql = "DELETE FROM athletes"
     SqlRunner.run(sql)
