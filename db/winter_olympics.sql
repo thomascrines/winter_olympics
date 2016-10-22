@@ -8,7 +8,7 @@ CREATE TABLE teams (
 id SERIAL4 PRIMARY KEY,
 name VARCHAR(255),
 code VARCHAR(3),
-flag_url TEXT,
+flag_url TEXT
 );
 
 CREATE TABLE athletes (
@@ -20,7 +20,7 @@ team_id INT4 REFERENCES teams(id) ON DELETE CASCADE
 
 CREATE TABLE disciplines (
 id SERIAL4 PRIMARY KEY,
-name VARCHAR(255),
+name VARCHAR(255)
 );
 
 CREATE TABLE events (
