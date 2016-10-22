@@ -1,5 +1,6 @@
 require 'pg'
 require_relative '../db/runner'
+require_relative 'discipline'
 
 class Event
 
@@ -9,7 +10,7 @@ class Event
     @id = options['id'].to_i
     @name = options['name']
     @gender = options['gender']
-    @discipline_id = options['discipline_id']
+    @discipline_id = options['discipline_id'].to_i
   end
 
   def save()

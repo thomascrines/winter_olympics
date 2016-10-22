@@ -1,8 +1,8 @@
-DROP TABLE athletes;
-DROP TABLE teams;
+DROP TABLE results;
 DROP TABLE events;
 DROP TABLE disciplines;
-DROP TABLE results;
+DROP TABLE athletes;
+DROP TABLE teams;
 
 CREATE TABLE teams (
 id SERIAL4 PRIMARY KEY,
@@ -14,7 +14,7 @@ flag_url TEXT
 CREATE TABLE athletes (
 id SERIAL4 PRIMARY KEY,
 name VARCHAR(255),
-gender VARCHAR(6),
+gender VARCHAR(20),
 team_id INT4 REFERENCES teams(id) ON DELETE CASCADE
 );
 
@@ -26,7 +26,7 @@ name VARCHAR(255)
 CREATE TABLE events (
 id SERIAL4 PRIMARY KEY,
 name VARCHAR(255),
-gender VARCHAR(6),
+gender VARCHAR(20),
 discipline_id INT4 REFERENCES disciplines(id) ON DELETE CASCADE
 );
 

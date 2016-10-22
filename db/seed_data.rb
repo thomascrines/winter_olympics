@@ -5,11 +5,11 @@ require_relative '../models/discipline'
 require_relative '../models/event'
 require_relative '../models/result'
 
-Result.delete_all()
-Discipline.delete_all()
-Event.delete_all()
 Team.delete_all()
 Athlete.delete_all()
+Discipline.delete_all()
+Event.delete_all()
+Result.delete_all()
 
 team01 = Team.new({'name' => "Canada", 'code' => "CAN", 'flag_url' => "ca.png"})
 team01.save()

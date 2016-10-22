@@ -10,7 +10,7 @@ class Athlete
     @id = options['id'].to_i
     @name = options['name']
     @gender = options['gender']
-    @team_id = options['team_id']
+    @team_id = options['team_id'].to_i
   end
 
   def save()

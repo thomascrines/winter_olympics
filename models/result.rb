@@ -9,10 +9,10 @@ class Result
 
   def initialize(options)
     @id = options['id'].to_i
-    @event_id = options['event_id']
-    @gold_id = options['gold_id']
-    @silver_id = options['silver_id']
-    @bronze_id = options['bronze_id']
+    @event_id = options['event_id'].to_i
+    @gold_id = options['gold_id'].to_i
+    @silver_id = options['silver_id'].to_i
+    @bronze_id = options['bronze_id'].to_i
   end
 
   def save()
