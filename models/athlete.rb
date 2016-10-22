@@ -19,4 +19,9 @@ class Athlete
     @id = athlete_data.first['id'].to_i
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM athletes"
+    SqlRunner.run(sql)
+  end
+
 end

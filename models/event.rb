@@ -1,5 +1,5 @@
 require 'pg'
-require_relative '../db/sql_runner'
+require_relative '../db/runner'
 
 class Event
 
@@ -17,4 +17,10 @@ class Event
     event_data = SqlRunner.run(sql)
     @id = event_data.first['id'].to_i
   end
+
+  def self.delete_all()
+    sql = "DELETE FROM events"
+    SqlRunner.run(sql)
+  end
+
 end

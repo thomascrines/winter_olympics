@@ -1,5 +1,5 @@
 require 'pg'
-require_relative '../db/sql_runner'
+require_relative '../db/runner'
 require_relative '../models/event'
 require_relative '../models/athlete'
 
@@ -20,6 +20,11 @@ class Result
     sql = "INSERT INTO events (name, event_id, gold_id, silver_id, bronze_id) VALUES ('#{@name}', #{@event_id}, #{@gold_id}, #{@silver_id}, #{@bronze_id}) RETURNING *"
     result_data = SqlRunner.run(sql)
     @id = result_data.first['id'].to_i
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM results"
+    SqlRunner.run(sql)
   end
 
 end

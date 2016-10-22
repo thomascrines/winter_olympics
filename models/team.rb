@@ -1,5 +1,5 @@
 require 'pg'
-require_relative '../db/sql_runner'
+require_relative '../db/runner'
 require_relative '../models/athlete'
 
 class Team
@@ -17,6 +17,11 @@ class Team
     sql = "INSERT INTO teams (name, code, flag_url) VALUES ('#{@name}', '#{@code}', '#{@flag_url}') RETURNING *"
     team_data = SqlRunner.run(sql)
     @id = team_data.first['id'].to_i
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM teams"
+    SqlRunner.run(sql)
   end
 
 end

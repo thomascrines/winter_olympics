@@ -1,5 +1,5 @@
 require 'pg'
-require_relative '../db/sql_runner'
+require_relative '../db/runner'
 require_relative '../models/event'
 
 class Discipline
@@ -15,6 +15,11 @@ class Discipline
     sql = "INSERT INTO disciplines (name) VALUES ('#{@name}') RETURNING *"
     discipline_data = SqlRunner.run(sql)
     @id = discipline_data.first['id'].to_i
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM disciplines"
+    SqlRunner.run(sql)
   end
   
 end
