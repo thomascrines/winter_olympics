@@ -1,7 +1,7 @@
 DROP TABLE results;
 DROP TABLE disciplines;
 DROP TABLE events;
-DROP TABLE nations;
+DROP TABLE teams;
 DROP TABLE athletes;
 
 CREATE TABLE athletes (
@@ -10,11 +10,11 @@ name VARCHAR(255),
 gender VARCHAR(6)
 );
 
-CREATE TABLE nations (
+CREATE TABLE teams (
 id SERIAL4 PRIMARY KEY,
 name VARCHAR(255),
-flag_url TEXT,
 code VARCHAR(3),
+flag_url TEXT,
 athlete_id INT4 REFERENCES athletes(id) ON DELETE CASCADE
 );
 
