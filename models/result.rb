@@ -16,7 +16,7 @@ class Result
   end
 
   def save()
-    sql = "INSERT INTO events (event_id, gold_id, silver_id, bronze_id) VALUES ('#{@name}', #{@event_id}, #{@gold_id}, #{@silver_id}, #{@bronze_id}) RETURNING *"
+    sql = "INSERT INTO results (event_id, gold_id, silver_id, bronze_id) VALUES (#{@event_id}, #{@gold_id}, #{@silver_id}, #{@bronze_id}) RETURNING *"
     result_data = SqlRunner.run(sql)
     @id = result_data.first['id'].to_i
   end

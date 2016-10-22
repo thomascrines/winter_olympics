@@ -14,7 +14,7 @@ class Event
   end
 
   def save()
-    sql = "INSERT INTO events (name, gender, discipline_id) VALUES ('#{@name}', #{@gender}, #{@discipline_id}) RETURNING *"
+    sql = "INSERT INTO events (name, gender, discipline_id) VALUES ('#{@name}', '#{@gender}', #{@discipline_id}) RETURNING *"
     event_data = SqlRunner.run(sql)
     @id = event_data.first['id'].to_i
   end

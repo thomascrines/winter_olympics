@@ -129,7 +129,7 @@ result002 = Result.new({'event_id' => event002.id, 'gold_id' => athlete001.id, '
 result002.save
 result003 = Result.new({'event_id' => event003.id, 'gold_id' => athlete009.id, 'silver_id' => athlete010.id, 'bronze_id' => athlete011.id})
 result003.save
-result004 = Result.new({'event_id' => event005.id, 'gold_id' => athlete021.id, 'silver_id' => athlete017.id, 'bronze_id' => athleteX.id})
-result015.save
+result004 = Result.new({'event_id' => event005.id, 'gold_id' => athlete021.id, 'silver_id' => athlete017.id, 'bronze_id' => athlete015.id})
+result004.save
 
 
