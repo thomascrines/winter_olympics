@@ -1,7 +1,7 @@
 require 'pg'
 require_relative '../db/sql_runner'
 require_relative '../models/event'
-require_relative '../models/album'
+require_relative '../models/athlete'
 
 class Result
 
