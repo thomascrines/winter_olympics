@@ -31,7 +31,7 @@ class Event
     
   end
 
-  def self.all
+  def self.all(query = "")
     query = query.to_s
     sql = "SELECT * FROM events"
     sql = sql + " WHERE name LIKE '<%#{query}%>'" unless query.empty?
@@ -39,16 +39,20 @@ class Event
     return events_data.map {|event_data| Event.new(event_data)}
   end
 
-  def self.find()
-    
+  def self.find(id)
+    sql = "SELECT * FROM events WHERE id = #{id}"
+    found_event = SqlRunner.run(sql)
+    return Event.new(found_event.first)
   end
 
-  def self.update()
-    
+  def self.update(options)
+    sql = "UPDATE events SET (name, gender, discipline_id) = ('#{options['name']}, '#{options[':gender']}', #{options[':discipline_id']}) WHERE id = #{options['id']}"
+    SqlRunner.run(sql)
   end
 
-  def self.destroy()
-
+  def self.destroy(id)
+    sql = "DELETE FROM events WHERE id = #{id}"
+    SqlRunner.run(sql)
   end
 
   def self.delete_all()
