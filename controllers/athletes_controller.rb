@@ -1,35 +1,44 @@
 #INDEX
 get '/athletes' do
-
+  user_input = params[:search]
+  @athletes = Athlete.all(user_input)
+  erb :'athletes/index'
 end
 
-#NEW
+#CREATE
 get '/athletes/new' do
-
+  erb :'athletes/new'
 end
 
 #NEW
 post '/athletes' do
-
+  @athlete = Athlete.new(params)
+  @athlete.save()
+  redirect to '/athletes'
 end
 
 #SHOW
 get '/athletes/:id' do
-
+  @athlete = Athlete.find(params[:id])
+  erb :'athletes/show'
 end
 
 #EDIT
 get '/athletes/:id/edit' do
-
+  @athlete = Athlete.find(params[:id])
+  @artists = Artist.all()
+  erb :'athletes/edit'
 end
 
 #UPDATE
 put '/athletes/:id' do
-
+  @athlete = Athlete.update(params)
+  redirect to '/athletes/#{params[:id]}'
 end
 
 #DELETE
 delete '/athletes/:id' do
-
+  Athlete.destroy(params[:id])
+  redirect to '/athletes'
 end
   
