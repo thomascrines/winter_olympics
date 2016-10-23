@@ -1,0 +1,17 @@
+<h2>Update an Athlete</h2>
+
+  <form action="/athletess/<%= @athlete.id %>" method="post">
+
+    <input type="hidden" name="_method" value="put">
+
+    <label for="name">Name:</label>
+    <input type="text" name="name" value="<%= @athlete.name %>">
+
+    <label for="gender">Sex:</label>
+    <input type="text" name="gender" value="<%= @athlete.gender %>">
+    
+    <label for="team">Team:</label>
+    <input type="text" name="team" value="<%= @athlete.team %>">
+
+    <input type='submit' value="Update Team">
+  </form>
