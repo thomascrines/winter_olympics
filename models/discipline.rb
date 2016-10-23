@@ -37,11 +37,13 @@ class Discipline
   end
 
   def self.update()
-    
+    sql = "UPDATE disciplines SET (name) = ('#{options['name']}) WHERE id = #{options['id']}"
+    SqlRunner.run(sql)
   end
 
   def self.destroy()
-
+    sql = "DELETE FROM disciplines WHERE id = #{id}"
+    SqlRunner.run(sql)
   end
 
   def self.delete_all()
