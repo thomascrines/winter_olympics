@@ -1,0 +1,7 @@
+<h2>Teams</h2>
+
+<% @teams.each do |team| %>
+ <p><%= team.name %> <%= team.code %></p>
+ <img src="<%=team.flag_url %>">
+ <br>
+<% end %>
