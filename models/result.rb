@@ -21,6 +21,14 @@ class Result
     @id = result_data.first['id'].to_i
   end
 
+  def self.update()
+    
+  end
+
+  def self.destroy()
+    
+  end
+
   def self.delete_all()
     sql = "DELETE FROM results"
     SqlRunner.run(sql)

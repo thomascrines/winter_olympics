@@ -20,7 +20,33 @@ class Athlete
   end
 
   def team()
-    sql = "GET * FROM teams WHERE id = #{@team_id}"
+    sql = "SELECT * FROM teams WHERE id = #{@team_id}"
+    team = SqlRunner.run(sql)
+    return Team.new(team.first)
+  end
+
+  def self.all(query = "")
+    query = query.to_s
+    sql = "SELECT * FROM athletes"
+    sql = sql + " WHERE name LIKE '<%#{query}%>'" unless query.empty?
+    athletes_data = SqlRunner.run(sql)
+    return athletes_data.map {|athlete_data| Athlete.new(athlete_data)}
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM athletes WHERE id = #{id}"
+    found_athlete = SqlRunner.run(sql)
+    return Athlete.new(found_athlete.first)
+  end
+
+  def self.update(options)
+    sql = "UPDATE athletes SET (name, gender, team_id) = ('#{options['name']}, '#{options[':gender']}', #{options[':team_id']}) WHERE id = #{options['id']}"
+    SqlRunner.run(sql)
+  end
+
+  def self.destroy(id)
+    sql = "DELETE FROM athletes WHERE id = #{id}"
+    SqlRunner.run(sql)
   end
 
   def self.delete_all()
