@@ -7,6 +7,7 @@ class Athlete
   attr_reader :id, :name, :gender, :team_id
 
   def initialize(options)
+    puts options
     @id = options['id'].to_i
     @name = options['name']
     @gender = options['gender']

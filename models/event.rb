@@ -1,6 +1,7 @@
 require 'pg'
 require_relative '../db/runner'
 require_relative 'discipline'
+require 'pry-byebug'
 
 class Event
 
@@ -20,15 +21,33 @@ class Event
   end
 
   def gold_winner()
-    
+    sql = "SELECT athletes.* FROM athletes INNER JOIN results ON results.gold_id = athletes.id WHERE event_id = #{@id}"
+    athlete = SqlRunner.run(sql).first
+    if athlete
+     return Athlete.new(athlete)
+    else
+      return "result pending"
+    end
   end
 
   def silver_winner()
-
+    sql = "SELECT athletes.* FROM athletes INNER JOIN results ON results.silver_id = athletes.id WHERE event_id = #{@id}"
+    athlete = SqlRunner.run(sql).first
+    if athlete
+     return Athlete.new(athlete)
+    else
+      return "result pending"
+    end
   end
 
   def bronze_winner()
-    
+    sql = "SELECT athletes.* FROM athletes INNER JOIN results ON results.bronze_id = athletes.id WHERE event_id = #{@id}"
+    athlete = SqlRunner.run(sql).first
+    if athlete
+     return Athlete.new(athlete)
+    else
+      return "result pending"
+    end
   end
 
   def self.all(query = "")
@@ -59,5 +78,11 @@ class Event
     sql = "DELETE FROM events"
     SqlRunner.run(sql)
   end
+
+  # def self.map_item(sql)
+  #   events = SqlRunner.run(sql)
+  #   result = events.map {|event| Event.new(event)}
+  #   return result.first
+  # end
 
 end

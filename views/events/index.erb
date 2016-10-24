@@ -1,5 +1,26 @@
 <h2>Events</h2>
 
 <% @events.each do |event| %>
- <p><%= event.name %></p>
+
+  <p><%= event.name %>
+
+  <% if event.gold_winner == "result pending"%>
+    <em>result pending</em>
+  <% else %>
+    <%= event.gold_winner.name %> 
+  <% end %>
+
+  <% if event.silver_winner == "result pending"%>
+    <em>result pending</em>
+  <% else %>
+    <%= event.silver_winner.name %> 
+  <% end %>
+
+  <% if event.bronze_winner == "result pending"%>
+    <em>result pending</em>
+  <% else %>
+    <%= event.bronze_winner.name %> 
+  <% end %>
+  </p>
+
 <% end %>
