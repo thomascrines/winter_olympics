@@ -1,5 +1,7 @@
 <h2>Teams</h2>
 
+<a href="/teams/new">Add a team</a>
+
 <% @teams.each do |team| %>
  <p><%= team.name %> <%= team.code %> <%= team.golds %> <%= team.silvers %> <%= team.bronzes %> <%= team.points_total %></p>
  <img src="<%=team.flag_url %>">
