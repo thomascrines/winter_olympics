@@ -3,24 +3,12 @@
 <% @events.each do |event| %>
 
   <p><%= event.name %>
+    <%= event.gold_winner.name if event.gold_winner != nil %>
 
-  <% if event.gold_winner == "result pending"%>
-    <em>result pending</em>
-  <% else %>
-    <%= event.gold_winner.name %> 
-  <% end %>
+    <%= event.silver_winner.name if event.silver_winner != nil %>
 
-  <% if event.silver_winner == "result pending"%>
-    <em>result pending</em>
-  <% else %>
-    <%= event.silver_winner.name %> 
-  <% end %>
+    <%= event.bronze_winner.name if event.bronze_winner != nil %>
 
-  <% if event.bronze_winner == "result pending"%>
-    <em>result pending</em>
-  <% else %>
-    <%= event.bronze_winner.name %> 
-  <% end %>
   </p>
 
 <% end %>

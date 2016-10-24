@@ -41,7 +41,16 @@ class Team
   end
 
   def points_total()
-    
+    sql_gold = "SELECT results.* FROM results INNER JOIN athletes ON athletes.id = results.gold_id WHERE team_id = #{@id}"
+    golds = Team.map_items(sql_gold).count
+
+    sql_silver = "SELECT r.* FROM results r INNER JOIN athletes a ON a.id = r.silver_id WHERE team_id = #{@id}"
+    silvers = Team.map_items(sql_silver).count
+
+    sql_bronze = "SELECT r.* FROM results r INNER JOIN athletes a ON a.id = r.bronze_id WHERE team_id = #{@id}"
+    bronzes = Team.map_items(sql_bronze).count
+
+    return (golds * 5) + (silvers * 3) + (bronzes)
   end
 
   def self.all(query = "")

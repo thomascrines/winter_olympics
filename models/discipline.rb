@@ -18,9 +18,10 @@ class Discipline
   end
 
   def events()
-    sql = "SELECT name FROM events WHERE id = #{id}"
+    sql = "SELECT * FROM events WHERE discipline_id = #{@id}"
     events_data = SqlRunner.run(sql)
-    return events_data.map {|event_data| Event.new(events_data).first}
+    events = events_data.map {|event_data| Event.new(event_data)}
+    return events
   end
 
   def self.all(query = "")

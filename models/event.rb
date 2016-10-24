@@ -23,31 +23,22 @@ class Event
   def gold_winner()
     sql = "SELECT athletes.* FROM athletes INNER JOIN results ON results.gold_id = athletes.id WHERE event_id = #{@id}"
     athlete = SqlRunner.run(sql).first
-    if athlete
-     return Athlete.new(athlete)
-    else
-      return "result pending"
-    end
+    return if athlete == nil
+    return Athlete.new(athlete)
   end
 
   def silver_winner()
     sql = "SELECT athletes.* FROM athletes INNER JOIN results ON results.silver_id = athletes.id WHERE event_id = #{@id}"
     athlete = SqlRunner.run(sql).first
-    if athlete
-     return Athlete.new(athlete)
-    else
-      return "result pending"
-    end
+    return if athlete == nil
+    return Athlete.new(athlete)
   end
 
   def bronze_winner()
     sql = "SELECT athletes.* FROM athletes INNER JOIN results ON results.bronze_id = athletes.id WHERE event_id = #{@id}"
     athlete = SqlRunner.run(sql).first
-    if athlete
-     return Athlete.new(athlete)
-    else
-      return "result pending"
-    end
+    return if athlete == nil
+    return Athlete.new(athlete)
   end
 
   def self.all(query = "")
