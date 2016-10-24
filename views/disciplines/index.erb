@@ -1,8 +1,15 @@
 <h2>Disciplines</h2>
 
+<a href="/disciplines/new">add a discipline</a>
+
 <% @disciplines.each do |discipline| %>
   <p><%= discipline.name %> 
     <% discipline.events.each do |event| %>
       <%= event.name %>
     <% end %></p>
+
+    <a href="/disciplines/<%= discipline.id %>/edit">edit</a>
+
+    <a href="/disciplines/<%= discipline.id %>/delete">delete</a>
+
 <% end %>

@@ -4,11 +4,9 @@
  <p><%= team.name %> <%= team.code %> <%= team.golds %> <%= team.silvers %> <%= team.bronzes %> <%= team.points_total %></p>
  <img src="<%=team.flag_url %>">
 
- <a href="/teams/<%= team.id %>/edit">Edit</a>
+ <a href="/teams/<%= team.id %>/edit">edit</a>
 
- <form action="/teams/<%= team.id %>" method="post">
- <input type="submit" value="Delete"/>
- <input name="_method" type="hidden" value="Delete"/>  
- </form>
+ <a href="/teams/<%= team.id %>/delete">delete</a>
+
  <br>
 <% end %>

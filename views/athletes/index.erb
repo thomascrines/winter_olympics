@@ -1,5 +1,12 @@
 <h2>Athletes</h2>
 
+<a href="/athletes/new">Add an athlete</a>
+
 <% @athletes.each do |athlete| %>
  <p><%= athlete.name %> <%= athlete.team.code %> <%= athlete.golds %> <%= athlete.silvers %> <%= athlete.bronzes %></p>
+
+ 
+ <a href="/athletes/<%= athlete.id %>/edit">edit</a>
+
+ <a href="/athletes/<%= athlete.id %>/delete">delete</a>
 <% end %>
