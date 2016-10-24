@@ -1,6 +1,5 @@
 <h2>Disciplines</h2>
 
 <% @disciplines.each do |discipline| %>
- <p><%= discipline.name %></p>
- <br>
+ <p><%= discipline.name %> <%= discipline.events %></p>
 <% end %>

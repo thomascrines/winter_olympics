@@ -18,8 +18,9 @@ class Discipline
   end
 
   def events()
-    sql = "SELECT * FROM events WHERE id = #{id}"
-    SqlRunner.run(sql)
+    sql = "SELECT name FROM events WHERE id = #{id}"
+    events_data = SqlRunner.run(sql)
+    return events_data.map {|event_data| Event.new(events_data).first}
   end
 
   def self.all(query = "")
@@ -36,12 +37,12 @@ class Discipline
     return Discipline.new(found_discipline.first)
   end
 
-  def self.update()
+  def self.update(options)
     sql = "UPDATE disciplines SET (name) = ('#{options['name']}) WHERE id = #{options['id']}"
     SqlRunner.run(sql)
   end
 
-  def self.destroy()
+  def self.destroy(id)
     sql = "DELETE FROM disciplines WHERE id = #{id}"
     SqlRunner.run(sql)
   end

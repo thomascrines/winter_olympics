@@ -1,6 +1,5 @@
 <h2>Athletes</h2>
 
 <% @athletes.each do |athlete| %>
- <p><%= athlete.name %> <%= athlete.team.name %></p>
- <br>
+ <p><%= athlete.name %> <%= athlete.team.code %> <%= athlete.golds %> <%= athlete.silvers %> <%= athlete.bronzes %></p>
 <% end %>

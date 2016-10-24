@@ -21,12 +21,14 @@ class Result
     @id = result_data.first['id'].to_i
   end
 
-  def self.update()
-    
+  def self.update(options)
+    sql = "UPDATE athletes SET (name, gender, team_id) = ('#{options['name']}, '#{options[':gender']}', #{options[':team_id']}) WHERE id = #{options['id']}"
+    SqlRunner.run(sql)
   end
 
-  def self.destroy()
-    
+  def self.destroy(id)
+    sql = "DELETE FROM results WHERE id = #{id}"
+    SqlRunner.run(sql)
   end
 
   def self.delete_all()
