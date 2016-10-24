@@ -26,15 +26,18 @@ class Team
   end
 
   def golds()
-    
+    sql = "SELECT results.* FROM results INNER JOIN athletes ON athletes.id = results.gold_id WHERE team_id = #{@id}"
+    return Team.map_items(sql).count
   end
 
   def silvers()
-
+    sql = "SELECT results.* FROM results INNER JOIN athletes ON athletes.id = results.silver_id WHERE team_id = #{@id}"
+    return Team.map_items(sql).count
   end
 
   def bronzes()
-
+    sql = "SELECT results.* FROM results INNER JOIN athletes ON athletes.id = results.bronze_id WHERE team_id = #{@id}"
+    return Team.map_items(sql).count
   end
 
   def points_total()
@@ -68,6 +71,12 @@ class Team
   def self.delete_all()
     sql = "DELETE FROM teams"
     SqlRunner.run(sql)
+  end
+
+  def self.map_items(sql)
+    medals = SqlRunner.run(sql)
+    result = medals.map {|medal| Team.new(medal)}
+    return result
   end
 
 end
