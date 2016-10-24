@@ -1,5 +1,7 @@
 <h2>Events</h2>
 
+<a href="/events/new">Add an event</a>
+
 <% @events.each do |event| %>
 
   <p><%= event.name %>
@@ -9,6 +11,13 @@
 
     <%= event.bronze_winner.name if event.bronze_winner != nil %>
 
+    <a href="/events/<%= event.id %>/edit">rename event</a>
+
+    <a href="/results/<%= event.id %>/edit">update results</a>
+
+    <a href="/events/<%= event.id %>/delete">delete event</a>
+
+    
   </p>
 
 <% end %>
