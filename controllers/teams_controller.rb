@@ -26,13 +26,13 @@ end
 #EDIT
 get '/teams/:id/edit' do
   @team = Team.find(params[:id])
-  erb :'team/edit'
+  erb :'teams/edit'
 end
 
 #UPDATE
 put '/teams/:id' do
   @team = Team.update(params)
-  redirect to '/artists/#{params[:id]}'
+  redirect to '/teams'
 end
 
 #DELETE

@@ -61,14 +61,14 @@ class Team
     return teams_data.map {|team_data| Team.new(team_data)}
   end
 
-  def self.find()
+  def self.find(id)
     sql = "SELECT * FROM teams WHERE id = #{id}"
     found_team = SqlRunner.run(sql)
     return Team.new(found_team.first)
   end
 
   def self.update(options)
-    sql = "UPDATE teams SET (name, code, flag_url) = ('#{options['name']}, '#{options['code']}', '#{options['flag_url']}'}"
+    sql = "UPDATE teams SET (name, code, flag_url) = ('#{options['name']}', '#{options['code']}', '#{options['flag_url']}') WHERE id = #{options['id']}"
     SqlRunner.run(sql)
   end
 

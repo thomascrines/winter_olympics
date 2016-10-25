@@ -39,8 +39,8 @@ class Discipline
   end
 
   def self.update(options)
-    sql = "UPDATE disciplines SET (name) = ('#{options['name']}') WHERE id = #{options['id']}"
-    SqlRunner.run(sql)
+    sql = "UPDATE disciplines SET name = '#{options['name']}' WHERE id = #{options['id']} RETURNING *"
+    SqlRunner.run(sql).first
   end
 
   def self.destroy(id)

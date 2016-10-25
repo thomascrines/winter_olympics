@@ -31,7 +31,8 @@ end
 
 #UPDATE
 put '/disciplines/:id' do
-  @discipline = Discipline.update(params)
+  disc = Discipline.update(params)
+  @discipline = Discipline.new(disc)
   redirect to '/disciplines'
 end
 

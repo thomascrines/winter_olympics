@@ -36,7 +36,7 @@ class Result
   end
 
   def self.update(options)
-    sql = "UPDATE athletes SET (name, gender, team_id) = ('#{options['name']}, '#{options[':gender']}', #{options[':team_id']}) WHERE id = #{options['id']}"
+    sql = "UPDATE results SET (gold_id, silver_id, bronze_id) = ('#{options['gold_id']}', '#{options['silver_id']}', #{options['bronze_id']}) WHERE id = #{options['id']}"
     SqlRunner.run(sql)
   end
 

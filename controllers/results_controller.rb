@@ -19,23 +19,24 @@ end
 
 #SHOW
 get '/results/:id' do
-  @result = result.find(params[:id])
-  erb :'results/show'
+  @result = Result.find(params[:id])
+  redirect to '/events'
 end
 
 #EDIT
 get '/results/:id/edit' do
-  @result = Result.find(params[:id])
   @athletes = Athlete.all()
   @event = Event.new(params)
   @results = Result.all()
+  @result = Result.find(params[:id])
   erb :'results/edit'
 end
 
 #UPDATE
 put '/results/:id' do
   @result = Result.update(params)
-  redirect to '/results/#{params[:id]}'
+  # Result.update()
+  redirect to '/events'
 end
 
 #DELETE
