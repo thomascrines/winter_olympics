@@ -1,0 +1,30 @@
+<h2>Update Event Results</h2>
+
+  <form action="/results/<%= @event.id %>" method="post">
+
+    <input type="hidden" name="_method" value="put">
+
+    <label for="gold_winner">Gold winner:</label>
+    <select name="gold_winner">
+      <% @athletes.each do |athlete| %>
+      <option value ="<%= athlete.id %>"><%= athlete.name %></option>
+      <% end %>
+    </select>
+
+    <label for="silver_winner">Silver winner:</label>
+    <select name="silver_winner">
+      <% @athletes.each do |athlete| %>
+      <option value ="<%= athlete.id %>"><%= athlete.name %></option>
+      <% end %>
+    </select>
+
+    <label for="bronze_winner">Bronze winner:</label>
+    <select name="bronze_winner">
+      <% @athletes.each do |athlete| %>
+      <option value ="<%= athlete.id %>"><%= athlete.name %></option>
+      <% end %>
+    </select>
+
+
+    <input type='submit' value="Update Results">
+  </form>

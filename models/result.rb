@@ -21,6 +21,20 @@ class Result
     @id = result_data.first['id'].to_i
   end
 
+  def self.all(query = "")
+    query = query.to_s
+    sql = "SELECT * FROM results"
+    sql = sql + " WHERE name LIKE '<%#{query}%>'" unless query.empty?
+    results_data = SqlRunner.run(sql)
+    return results_data.map {|result_data| Result.new(result_data)}
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM results WHERE id = #{id}"
+    found_result = SqlRunner.run(sql)
+    return Result.new(found_result.first)
+  end
+
   def self.update(options)
     sql = "UPDATE athletes SET (name, gender, team_id) = ('#{options['name']}, '#{options[':gender']}', #{options[':team_id']}) WHERE id = #{options['id']}"
     SqlRunner.run(sql)

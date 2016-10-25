@@ -1,15 +1,18 @@
 <h2>Add a new athlete</h>
 
-<p>
-<form action="/athletes" method="post">
-  <label for="team">Team:</label>
-  <select name="team">
-    <option value=></option>
-  </select>
+  <p>
+    <form action="/athletes" method="post">
 
-  <label for="name">Name:</label>
-  <input type="text" name="name">
+      <label for="name">Name:</label>
+      <input type="text" name="name">
 
-  <input type="submit" value="Add athlete">
-</form>
-</p>
+      <label for="team_id">Team:</label>
+      <select name="team_id">
+        <% @teams.each do |team| %>
+        <option value ="<%= team.id %>"><%= team.name %></option>
+        <% end %>
+      </select>
+
+      <input type="submit" value="Add Athlete">
+    </form>
+  </p>

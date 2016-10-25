@@ -15,7 +15,10 @@
 
     <a href="/results/<%= event.id %>/edit">update</a>
 
-    <a href="/events/<%= event.id %>/delete">delete</a>
+    <form action="/events/<%= event.id %>" method="post">
+    <input type="submit" value="Delete"/>
+    <input name="_method" type="hidden" value="delete"/>  
+    </form>
     
   </p>
 

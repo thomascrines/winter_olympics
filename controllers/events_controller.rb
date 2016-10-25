@@ -5,13 +5,16 @@ get '/events' do
   erb :'events/index'
 end
 
-#CREATE
+#NEW
 get '/events/new' do
+  @event = Event.new(params)
+  @disciplines = Discipline.all()
   erb :'events/new'
 end
 
-#NEW
+#CREATE
 post '/events' do
+  @disciplines = Discipline.all()
   @event = Event.new(params)
   @event.save()
   redirect to '/events'
@@ -26,12 +29,17 @@ end
 #EDIT
 get '/events/:id/edit' do
   @event = Event.find(params[:id])
+  @disciplines = Discipline.all()
+  @event.save()
   erb :'events/edit'
 end
 
 #UPDATE
 put '/events/:id' do
   @event = Event.update(params)
+  @gender = @event.gender
+  @disciplines = Discipline.all
+  @event.save
   redirect to '/events/#{params[:id]}'
 end
 

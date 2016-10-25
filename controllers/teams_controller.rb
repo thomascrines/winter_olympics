@@ -37,6 +37,6 @@ end
 
 #DELETE
 delete '/teams/:id' do
-  Team.delete(params[:id])
+  Team.destroy(params[:id])
   redirect to '/teams'
 end

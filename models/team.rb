@@ -57,8 +57,8 @@ class Team
     query = query.to_s
     sql = "SELECT * FROM teams"
     sql = sql + " WHERE name LIKE '<%#{query}%>'" unless query.empty?
-    teams = SqlRunner.run(sql)
-    return teams.map {|team| Team.new(team)}
+    teams_data = SqlRunner.run(sql)
+    return teams_data.map {|team_data| Team.new(team_data)}
   end
 
   def self.find()

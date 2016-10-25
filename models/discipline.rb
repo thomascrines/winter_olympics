@@ -39,7 +39,7 @@ class Discipline
   end
 
   def self.update(options)
-    sql = "UPDATE disciplines SET (name) = ('#{options['name']}) WHERE id = #{options['id']}"
+    sql = "UPDATE disciplines SET (name) = ('#{options['name']}') WHERE id = #{options['id']}"
     SqlRunner.run(sql)
   end
 

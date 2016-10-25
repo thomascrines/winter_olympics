@@ -1,20 +1,24 @@
-<h2>Add a new event</h>
+<h2>Add an event</h>
 
 <p>
 <form action="/events" method="post">
-  <label for="discipline">Discipline:</label>
-  <select name="discipline">
-    <option value=></option>
+
+<label for="name">Name:</label>
+<input type="text" name="name">
+
+<label for="gender">Field:</label>
+<select name="gender">
+  <option value="<%= @gender %>">Men</option>
+  <option value="<%= @gender %>">Women</option>
+</select>
+
+  <label for="discipline_id">Discipline:</label>
+  <select name="discipline_id">
+  <% @disciplines.each do |discipline| %>
+    <option value="<%= discipline.id %>"><%= discipline.name %></option>
+    <% end %>
   </select>
 
-  <label for="gender">Field:</label>
-  <select name="gender">
-    <option value=></option>
-  </select>
-
-  <label for="name">Name:</label>
-  <input type="text" name="name">
-
-  <input type="submit" value="Add event">
+  <input type="submit" value="Add Event">
 </form>
 </p>

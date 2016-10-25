@@ -1,0 +1,9 @@
+<h2>Edit Discipline Name</h2>
+
+<form action="/disciplines/<%= @discipline.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <label for="name">New discipline name:</label>
+  <input type="text" name="name" value="<%= @discipline.name %>"><br>
+
+  <input type='submit' value="Update Discipline">
+</form>

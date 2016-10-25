@@ -32,7 +32,7 @@ end
 #UPDATE
 put '/disciplines/:id' do
   @discipline = Discipline.update(params)
-  redirect to '/disciplines/#{params[:id]}'
+  redirect to '/disciplines'
 end
 
 #DELETE

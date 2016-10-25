@@ -10,6 +10,9 @@
 
     <a href="/disciplines/<%= discipline.id %>/edit">edit</a>
 
-    <a href="/disciplines/<%= discipline.id %>/delete">delete</a>
+    <form action="/disciplines/<%= discipline.id %>" method="post">
+    <input type="submit" value="Delete"/>
+    <input name="_method" type="hidden" value="delete"/>  
+    </form>
 
 <% end %>

@@ -1,4 +1,4 @@
-<h2>Update an Athlete</h2>
+<h2>Update Athlete Details</h2>
 
   <form action="/athletes/<%= @athlete.id %>" method="post">
 
@@ -7,11 +7,16 @@
     <label for="name">Name:</label>
     <input type="text" name="name" value="<%= @athlete.name %>">
 
-    <label for="gender">Sex:</label>
+    <label for="gender">Field:</label>
     <input type="text" name="gender" value="<%= @athlete.gender %>">
     
-    <label for="team">Team:</label>
-    <input type="text" name="team" value="<%= @athlete.team %>">
+    <label for="team_id">Team:</label>
+    <select name="team_id">
+      <% @teams.each do |team| %>
+      <option value ="<%= team.id %>"><%= team.name %></option>
+      <% end %>
+    </select>
 
-    <input type='submit' value="Update Team">
+    <input type='submit' value="Update Athlete">
   </form>
+
