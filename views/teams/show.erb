@@ -1,8 +1,4 @@
-<b>Name: <%= @team.name() %></b>
-<br>
-<a href="/teams/<%= @team.id %>/edit">Edit</a>
-
-<form action="/teams/<%= @team.id %>" method="post">
-<input type="submit" value="Delete"/>
-<input name="_method" type="hidden" value="delete"/>  
-</form>
+<h2><%= @team.name() %></h2>
+<img src="<%= @team.flag_url %>">
+<h1><%= @team.code() %></h1>
+<h2><%= @team.golds %> <%= @team.silvers %>  <%= @team.bronzes %>

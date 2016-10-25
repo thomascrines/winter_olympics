@@ -9,21 +9,21 @@
       <% @athletes = @athletes.sort_by { |athlete| athlete.name } %>
       <% @athletes.each do |athlete| %>
       
-      <option value ="<%= athlete.id %>"><%= athlete.name %></option>
+      <option value ="<%= athlete.id %>"<%= 'selected' if athlete.id == @result.gold_id %>><%= athlete.name %></option>
       <% end %>
     </select>
 
     <label for="silver_winner">Silver winner:</label>
     <select name="silver_id">
       <% @athletes.each do |athlete| %>
-      <option value ="<%= athlete.id %>"><%= athlete.name %></option>
+      <option value ="<%= athlete.id %>" <%= 'selected' if athlete.id == @result.silver_id %>><%= athlete.name %></option>
       <% end %>
     </select>
 
     <label for="bronze_winner">Bronze winner:</label>
     <select name="bronze_id">
       <% @athletes.each do |athlete| %>
-      <option value ="<%= athlete.id %>"><%= athlete.name %></option>
+      <option value ="<%= athlete.id %>" <%= 'selected' if athlete.id == @result.bronze_id %>><%= athlete.name %></option>
       <% end %>
     </select>
 
