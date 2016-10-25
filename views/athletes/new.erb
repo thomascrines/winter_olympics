@@ -8,6 +8,7 @@
 
       <label for="team_id">Team:</label>
       <select name="team_id">
+        <% @teams = @teams.sort_by { |team| team.name } %>
         <% @teams.each do |team| %>
         <option value ="<%= team.id %>"><%= team.name %></option>
         <% end %>

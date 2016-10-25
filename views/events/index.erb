@@ -11,9 +11,15 @@
 
     <%= event.bronze_winner.name if event.bronze_winner != nil %>
 
+    
     <a href="/events/<%= event.id %>/edit">edit</a>
 
+
+    <% if event.gold_winner != nil %>
     <a href="/results/<%= event.id %>/edit">update</a>
+    <% else %>
+    <a href="/results/<%= event.id %>/new">add results</a>
+    <% end %>
 
     <form action="/events/<%= event.id %>" method="post">
     <input type="submit" value="Delete"/>

@@ -1,0 +1,34 @@
+<h2>Add Result</h2>
+
+<form action="/results" method="post">
+
+  <input type="hidden" name="event_id" value="<%= @event.id %>">
+
+  <input type="hidden" name="_method" value="put">
+
+  <label for="gold_id">Gold winner:</label>
+  <select name="gold_id">
+    <% @athletes = @athletes.sort_by { |athlete| athlete.name } %>
+    <% @athletes.each do |athlete| %>
+    
+    <option value ="<%= athlete.id %>"><%= athlete.name %></option>
+    <% end %>
+  </select>
+
+  <label for="silver_id">Silver winner:</label>
+  <select name="silver_id">
+    <% @athletes.each do |athlete| %>
+    <option value ="<%= athlete.id %>"><%= athlete.name %></option>
+    <% end %>
+  </select>
+
+  <label for="bronze_id">Bronze winner:</label>
+  <select name="bronze_id">
+    <% @athletes.each do |athlete| %>
+    <option value ="<%= athlete.id %>"><%= athlete.name %></option>
+    <% end %>
+  </select>
+
+
+  <input type='submit' value="Add Result">
+</form>

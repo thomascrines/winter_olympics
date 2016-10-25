@@ -4,17 +4,19 @@ get '/results' do
   @results = Result.all(user_input)
   erb :'results/index'
 end
+#NEW
 
-#CREATE
-get '/results/new' do
+get '/results/:id/new' do
+  @athletes = Athlete.all()
+  @event = Event.find(params[:id])
   erb :'results/new'
 end
 
-#NEW
-post '/results' do
+#CREATE
+put '/results' do
   @result = Result.new(params)
   @result.save()
-  redirect to '/results'
+  redirect to '/events'
 end
 
 #SHOW
@@ -35,7 +37,6 @@ end
 #UPDATE
 put '/results/:id' do
   @result = Result.update(params)
-  # Result.update()
   redirect to '/events'
 end
 
