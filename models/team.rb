@@ -19,12 +19,6 @@ class Team
     @id = team_data.first['id'].to_i
   end
 
-  def athletes()
-    sql = "SELECT * FROM athletes WHERE team_id = #{id}"
-    athletes_data = SqlRunner.run(sql)
-    return athletes_data.map {|athlete_data| Athlete.new(athletes_data)}
-  end
-
   def golds()
     sql = "SELECT results.* FROM results INNER JOIN athletes ON athletes.id = results.gold_id WHERE team_id = #{@id}"
     return Team.map_items(sql).count

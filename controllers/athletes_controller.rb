@@ -22,7 +22,7 @@ end
 #SHOW
 get '/athletes/:id' do
   @athlete = Athlete.find(params[:id])
-  erb :'athletes/show'
+  redirect to '/athletes'
 end
 
 #EDIT
