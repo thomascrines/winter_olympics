@@ -36,7 +36,6 @@ end
 put '/athletes/:id' do
   @athlete = Athlete.update(params)
   @teams = Team.all()
-  @athlete.save
   redirect to '/athletes'
 end
 

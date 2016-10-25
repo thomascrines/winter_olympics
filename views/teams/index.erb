@@ -2,6 +2,8 @@
 
 <a href="/teams/new">Add a team</a>
 
+<% @team = @teams.sort_by { |team| team.points_total } %>
+
 <% @teams.each do |team| %>
  <p><a href="teams/<%= team.id %>"><%= team.name %></a> <%= team.code %> <%= team.golds %> <%= team.silvers %> <%= team.bronzes %> <%= team.points_total %></p>
  <img src="<%=team.flag_url %>">

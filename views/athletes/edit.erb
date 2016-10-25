@@ -1,6 +1,6 @@
 <h2>Update Athlete Details</h2>
 
-  <form action="/athletes/<%= @athlete.id %>" method="put">
+  <form action="/athletes/<%= @athlete.id %>" method="post">
 
     <input type="hidden" name="_method" value="put">
 
@@ -13,7 +13,7 @@
     <label for="team_id">Team:</label>
     <select name="team_id">
       <% @teams.each do |team| %>
-      <option value ="<%= team.id %>"><%= team.name %></option>
+      <option value ="<%= team.id %>" <%= 'selected' if @athlete.team_id == team.id %>><%= team.name %></option>
       <% end %>
     </select>
 
