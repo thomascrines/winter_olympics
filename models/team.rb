@@ -47,6 +47,12 @@ class Team
     return (golds * 5) + (silvers * 3) + (bronzes)
   end
 
+  def athletes()
+    sql = "SELECT * FROM athletes WHERE team_id = #{id}"
+    athletes_data = SqlRunner.run(sql)
+    return athletes_data.map {|athlete_data| Athlete.new(athletes_data)}
+  end
+
   def self.all(query = "")
     query = query.to_s
     sql = "SELECT * FROM teams"

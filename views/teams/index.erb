@@ -1,12 +1,27 @@
 <h2>Teams</h2>
 
 <a href="/teams/new">Add a team</a>
+<hr>
 
-<% @team = @teams.sort_by { |team| team.points_total } %>
+<!-- <div class="grid">
+<div class="grid-row grid-row-lg">
+<div class="cell">Team Name</div> 
+<div class="cell">Code</div>
+<div class="cell"><div id="gold"></div></div>
+<div class="cell"><div id="silver"><div></div>
+<div class="cell"><div id="bronze"></div></div>
+<div class="cell">Total Points</div>
+<div class="cell">Edit</div>
+<div class="cell">Delete</div>
+</div> -->
+<!-- </div>
+<hr> -->
+
+<% @teams = @teams.sort { |team1, team2| team2.points_total <=> team1.points_total } %>
 <% @teams.each do |team| %>
 
 <div class="grid">
-<div class="grid-row grid-row-sm">
+<div class="grid-row grid-row-lg">
 
  <a href="teams/<%= team.id %>">
  <div class="cell"><%= team.name %></a></div> 
@@ -24,6 +39,8 @@
  </form></div>
 
  </div>
- </div>
  
+ <hr>
+ </div>
 <% end %>
+

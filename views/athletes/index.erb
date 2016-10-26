@@ -1,6 +1,7 @@
 <h2>Athletes</h2>
 
 <a href="/athletes/new">Add an athlete</a>
+<hr>
 
 <% @athletes = @athletes.sort_by { |athlete| athlete.name } %>
 <% @athletes.each do |athlete| %>
@@ -26,5 +27,5 @@
 
  </div>
  </div>
-
+ <hr>
  <% end %>
