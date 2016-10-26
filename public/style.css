@@ -1,10 +1,41 @@
-#logo {
-  width: 75px;
-  height: auto;
-}
-
 body {
   font-family: "Helvetica";
+}
+
+nav {
+  background-color: darkblue;
+  height: 80px;
+  position: relative;
+  width: 100%;
+}
+
+nav ul{
+  padding-left: 0px;
+  margin: 0px;
+  list-style-type: none;
+  line-height: 80px;
+}
+
+nav ul li{
+  display: inline;
+}
+
+nav ul li a{
+  text-decoration: none;
+  color: white;
+  line-height: 65px;
+  margin-left: 20px;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+
+
+main {
+  padding-top: 80px;
+  background-color: white;
+  overflow: scroll;
+  min-height: 50em;
 }
 
 .grid {
