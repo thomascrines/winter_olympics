@@ -50,7 +50,8 @@ class Team
   def athletes()
     sql = "SELECT * FROM athletes WHERE team_id = #{id}"
     athletes_data = SqlRunner.run(sql)
-    return athletes_data.map {|athlete_data| Athlete.new(athletes_data)}
+    athletes = athletes_data.map {|athlete_data| Athlete.new(athlete_data).first}
+    return athletes
   end
 
   def self.all(query = "")

@@ -62,9 +62,12 @@ class Event
     return Event.new(found_event.first)
   end
 
+  # doesn't update, adds a new...
+
   def self.update(options)
-    sql = "UPDATE events SET (name, gender, discipline_id) = ('#{options['name']}, '#{options[':gender']}', #{options[':discipline_id']}) WHERE id = #{options['id']}"
-    SqlRunner.run(sql)
+    sql = "UPDATE events SET name = '#{options['name']}', gender = '#{options['gender']}', discipline_id = #{options['discipline_id']} WHERE id = #{options['id'].to_i} RETURNING *"
+    result = SqlRunner.run(sql).first
+    return Event.new(result)
   end
 
   def self.destroy(id)

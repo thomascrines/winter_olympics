@@ -1,19 +1,21 @@
 <h2>Edit Event</h2>
 
 <form action="/events/<%= @event.id %>" method="post">
+<input type="hidden" name="_method" value="put">
+
 <label for="name">Name:</label>
 <input type="text" name="name" value="<%= @event.name %>">
 
 <label for="gender">Field:</label>
 <select name="gender">
-  <option value="<%= @gender %>">Men</option>
-  <option value="<%= @gender %>">Women</option>
+  <option value="<%= @event.gender %>">Men</option>
+  <option value="<%= @event.gender %>">Women</option>
 </select>
 
   <label for="discipline_id">Discipline:</label>
   <select name="discipline_id">
   <% @disciplines.each do |discipline| %>
-    <option value="<%= discipline.id %>"><%= discipline.name %></option>
+    <option value="<%= discipline.id %>"<%= 'selected' if discipline.id == @event.discipline_id %>><%= discipline.name %></option>
     <% end %>
   </select>
   

@@ -39,7 +39,6 @@ put '/events/:id' do
   @event = Event.update(params)
   @gender = @event.gender
   @disciplines = Discipline.all
-  @event.save
   redirect to '/events'
 end
 
