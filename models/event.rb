@@ -41,6 +41,13 @@ class Event
     return Athlete.new(athlete)
   end
 
+  def result()
+    sql = "SELECT * FROM results WHERE event_id = #{id}"
+    result = SqlRunner.run(sql).first
+    return if result == nil
+    return Result.new(result)
+  end
+
   def self.all(query = "")
     query = query.to_s
     sql = "SELECT * FROM events"

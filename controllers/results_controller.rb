@@ -6,7 +6,7 @@ get '/results' do
 end
 #NEW
 
-get '/results/:id/new' do
+get '/results/new' do
   @athletes = Athlete.all()
   @event = Event.find(params[:id])
   erb :'results/new'

@@ -21,10 +21,10 @@
     <td><%= event.bronze_winner.name if event.bronze_winner != nil %></td>
 
     <td>
-        <% if event.gold_winner != nil %>
-        <a href="/results/<%= event.id %>/edit">update</a>
+        <% if event.gold_winner == nil %>
+        <a href="/results/new?id=<%= event.id %>">add results</a>
         <% else %>
-        <a href="/results/<%= event.id %>/new">add results</a>
+        <a href="/results/<%= event.result.id %>/edit">edit results</a>
         <% end %>
     </td>
 

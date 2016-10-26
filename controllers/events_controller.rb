@@ -40,7 +40,7 @@ put '/events/:id' do
   @gender = @event.gender
   @disciplines = Discipline.all
   @event.save
-  redirect to '/events/#{params[:id]}'
+  redirect to '/events'
 end
 
 #DELETE
