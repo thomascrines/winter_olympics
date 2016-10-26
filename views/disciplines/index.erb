@@ -3,32 +3,28 @@
 <a href="/disciplines/new">add a discipline</a>
 <hr>
 
-<% @disciplines.each do |discipline| %>
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Events</th> 
+    <th></th>
+  </tr>
 
-<div class="grid">
-<div class="grid-row grid-row-sm">
+  <% @disciplines.each do |discipline| %>
 
-<div class="cell"><%= discipline.name %></div>
+  <tr>
+  <td><a href="/disciplines/<%= discipline.id %>/edit"><%= discipline.name %></a></td>
 
-  <div class="cell">
-  <% discipline.events.each do |event| %>
-  <%= event.name %>
-  <% end %>
-  </div>
+    <td><% discipline.events.each do |event| %>
+    <%= event.name %>,
+    <% end %></td>
 
-  <div class="cell">
-  <a href="/disciplines/<%= discipline.id %>/edit">edit</a>
-  </div>
-
-  <div class="cell">
-  <form action="/disciplines/<%= discipline.id %>" method="post">
-    <input type="submit" value="Delete"/>
-    <input name="_method" type="hidden" value="delete"/>  
-  </form>
-  </div>
-
-  </div>
-  </div>
-  <hr>
+    <td>
+    <form action="/disciplines/<%= discipline.id %>" method="post">
+      <input type="submit" value="Delete"/>
+      <input name="_method" type="hidden" value="delete"/>  
+    </form>
+    </td>
+  </tr>
   <% end %>
  

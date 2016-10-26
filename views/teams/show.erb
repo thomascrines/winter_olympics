@@ -4,9 +4,5 @@
 <br>
 <img src="<%= @team.flag_url%>">
 <h1><%= @team.code() %></h1>
-<h2>
-<div id="gold"><%= @team.golds %></div>
-<div id="silver"><%= @team.silvers %><div>
-<div id="bronze"><%= @team.bronzes %></div>
-</div>
+<h2>Gold: <%= @team.golds %> Silver: <%= @team.silvers %> Bronze: <%= @team.bronzes %></h2>
 </div>

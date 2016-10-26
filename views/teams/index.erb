@@ -3,44 +3,38 @@
 <a href="/teams/new">Add a team</a>
 <hr>
 
-<!-- <div class="grid">
-<div class="grid-row grid-row-lg">
-<div class="cell">Team Name</div> 
-<div class="cell">Code</div>
-<div class="cell"><div id="gold"></div></div>
-<div class="cell"><div id="silver"><div></div>
-<div class="cell"><div id="bronze"></div></div>
-<div class="cell">Total Points</div>
-<div class="cell">Edit</div>
-<div class="cell">Delete</div>
-</div> -->
-<!-- </div>
-<hr> -->
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Code</th> 
+    <th><div id="gold"></div></th>
+    <th><div id="silver"></div></th>
+    <th><div id="bronze"></div></th>
+    <th>Points</th>
+    <th>Edit</th>
+    <th></th>
+  </tr>
 
-<% @teams = @teams.sort { |team1, team2| team2.points_total <=> team1.points_total } %>
-<% @teams.each do |team| %>
+  <% @teams = @teams.sort { |team1, team2| team2.points_total <=> team1.points_total } %>
+  <% @teams.each do |team| %>
 
-<div class="grid">
-<div class="grid-row grid-row-lg">
+  <tr>
 
- <a href="teams/<%= team.id %>">
- <div class="cell"><%= team.name %></a></div> 
- <div class="cell"><%= team.code %></div>
- <div class="cell"><%= team.golds %></div>
- <div class="cell"><%= team.silvers %></div>
- <div class="cell"><%= team.bronzes %></div>
- <div class="cell"><%= team.points_total %></div>
+   <td><a href="teams/<%= team.id %>"><%= team.name %></a></td> 
+   <td><%= team.code %></td>
+   <td><%= team.golds %></td>
+   <td><%= team.silvers %></td>
+   <td><%= team.bronzes %></td>
+   <td><%= team.points_total %></td>
 
- <div class="cell"><a href="/teams/<%= team.id %>/edit">edit</a></div>
+   <td><a href="/teams/<%= team.id %>/edit">edit</a></div></td>
 
- <div class="cell"><form action="/teams/<%= team.id %>" method="post">
- <input type="submit" value="Delete"/>
- <input name="_method" type="hidden" value="delete"/>  
- </form></div>
-
- </div>
- 
- <hr>
- </div>
-<% end %>
+   <td>
+     <form action="/teams/<%= team.id %>" method="post">
+       <input type="submit" value="Delete"/>
+       <input name="_method" type="hidden" value="delete"/>  
+     </form></div>
+     <td> 
+     </tr>
+     <% end %>
 

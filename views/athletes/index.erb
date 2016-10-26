@@ -3,29 +3,31 @@
 <a href="/athletes/new">Add an athlete</a>
 <hr>
 
-<% @athletes = @athletes.sort_by { |athlete| athlete.name } %>
-<% @athletes.each do |athlete| %>
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Team</th> 
+    <th><div id="gold"></div></th>
+    <th><div id="silver"></div></th>
+    <th><div id="bronze"></div></th>
+    <th></th>
+  </tr>
 
-<div class="grid">
-<div class="grid-row grid-row-sm">
+  <% @athletes = @athletes.sort_by { |athlete| athlete.name } %>
+  <% @athletes.each do |athlete| %>
 
- <div class="cell"><%= athlete.name %></div>
- <div class="cell"><%= athlete.team.code %></div>
- <div class="cell"><%= athlete.golds %></div>
- <div class="cell"><%= athlete.silvers %></div>
- <div class="cell"><%= athlete.bronzes %></div>
+  <tr>
+   <td><a href="/athletes/<%= athlete.id %>/edit"><%= athlete.name %></a></td>
+   <td><%= athlete.team.code %></td>
+   <td><%= athlete.golds %></td>
+   <td><%= athlete.silvers %></td>
+   <td><%= athlete.bronzes %></td>
 
- 
- <div class="cell"><a href="/athletes/<%= athlete.id %>/edit">edit</a></div>
-
- <div class="cell">
- <form action="/athletes/<%= athlete.id %>" method="post">
- <input type="submit" value="Delete"/>
- <input name="_method" type="hidden" value="delete"/>  
- </form>
- </div>
-
- </div>
- </div>
- <hr>
+   <td>
+     <form action="/athletes/<%= athlete.id %>" method="post">
+       <input type="submit" value="Delete"/>
+       <input name="_method" type="hidden" value="delete"/>  
+     </form>
+   </td>
+ </tr>
  <% end %>
