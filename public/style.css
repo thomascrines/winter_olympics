@@ -6,3 +6,40 @@
 body {
   font-family: "Helvetica";
 }
+
+.grid {
+  border: 0px;
+}
+
+.grid-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.cell {
+  flex: 1;
+  padding: 0px;
+  border: 0px;
+}
+
+/*Media queries*/
+@media all and (min-width: 480px){
+
+  .grid-row-sm{
+    flex-direction:row;
+  }
+}
+
+@media all and (min-width: 720px){
+
+  .grid-row-md{
+    flex-direction:row;
+  }
+}
+
+@media all and (min-width: 960px){
+
+  .grid-row-lg{
+    flex-direction:row;
+  }
+}
