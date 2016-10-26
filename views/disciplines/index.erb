@@ -3,16 +3,30 @@
 <a href="/disciplines/new">add a discipline</a>
 
 <% @disciplines.each do |discipline| %>
-  <p><%= discipline.name %> 
-    <% discipline.events.each do |event| %>
-      <%= event.name %>
-    <% end %></p>
 
-    <a href="/disciplines/<%= discipline.id %>/edit">edit</a>
+<div class="grid">
+<div class="grid-row grid-row-sm">
 
-    <form action="/disciplines/<%= discipline.id %>" method="post">
+<div class="cell"><%= discipline.name %></div>
+
+  <div class="cell">
+  <% discipline.events.each do |event| %>
+  <%= event.name %>
+  <% end %>
+  </div>
+
+  <div class="cell">
+  <a href="/disciplines/<%= discipline.id %>/edit">edit</a>
+  </div>
+
+  <div class="cell">
+  <form action="/disciplines/<%= discipline.id %>" method="post">
     <input type="submit" value="Delete"/>
     <input name="_method" type="hidden" value="delete"/>  
-    </form>
+  </form>
+  </div>
 
-<% end %>
+  </div>
+  </div>
+
+  <% end %>

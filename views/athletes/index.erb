@@ -2,16 +2,29 @@
 
 <a href="/athletes/new">Add an athlete</a>
 
-<% @athletes = @athletes.sort_by { |athlete| athlete.golds } %>
+<% @athletes = @athletes.sort_by { |athlete| athlete.name } %>
 <% @athletes.each do |athlete| %>
- <p><%= athlete.name %> <%= athlete.team.code %> <%= athlete.golds %> <%= athlete.silvers %> <%= athlete.bronzes %></p>
+
+<div class="grid">
+<div class="grid-row grid-row-sm">
+
+ <div class="cell"><%= athlete.name %></div>
+ <div class="cell"><%= athlete.team.code %></div>
+ <div class="cell"><%= athlete.golds %></div>
+ <div class="cell"><%= athlete.silvers %></div>
+ <div class="cell"><%= athlete.bronzes %></div>
 
  
- <a href="/athletes/<%= athlete.id %>/edit">edit</a>
+ <div class="cell"><a href="/athletes/<%= athlete.id %>/edit">edit</a></div>
 
+ <div class="cell">
  <form action="/athletes/<%= athlete.id %>" method="post">
  <input type="submit" value="Delete"/>
  <input name="_method" type="hidden" value="delete"/>  
  </form>
+ </div>
+
+ </div>
+ </div>
 
  <% end %>

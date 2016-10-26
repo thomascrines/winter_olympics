@@ -4,28 +4,37 @@
 
 <% @events.each do |event| %>
 
-  <p><%= event.name %>
-    <%= event.gold_winner.name if event.gold_winner != nil %>
+<div class="grid">
+<div class="grid-row grid-row-sm">
 
-    <%= event.silver_winner.name if event.silver_winner != nil %>
+  <div class="cell"><%= event.name %></div>
 
-    <%= event.bronze_winner.name if event.bronze_winner != nil %>
+    <div class="cell"><%= event.gold_winner.name if event.gold_winner != nil %></div>
+
+    <div class="cell"><%= event.silver_winner.name if event.silver_winner != nil %></div>
+
+   <div class="cell"><%= event.bronze_winner.name if event.bronze_winner != nil %></div>
 
     
-    <a href="/events/<%= event.id %>/edit">edit</a>
+    <div class="cell"><a href="/events/<%= event.id %>/edit">edit</a></div>
 
 
-    <% if event.gold_winner != nil %>
+    <div class="cell"><% if event.gold_winner != nil %>
     <a href="/results/<%= event.id %>/edit">update</a>
     <% else %>
     <a href="/results/<%= event.id %>/new">add results</a>
     <% end %>
+    </div>
 
+    <div class="cell">
     <form action="/events/<%= event.id %>" method="post">
     <input type="submit" value="Delete"/>
     <input name="_method" type="hidden" value="delete"/>  
     </form>
-    
-  </p>
+    </div>
+
+    </div>
+    </div>
 
 <% end %>
+
