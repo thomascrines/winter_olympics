@@ -31,4 +31,4 @@ Input ‘ruby db/seed_data.rb’ from ‘winter_olympics’ folder.
 4. Start server: 
 Input ‘ruby controller.rb’ from ‘winter_olympics’ folder. 
 5. View:
-View on browser at ‘localhost:4567/teams’.
+View on browser at ‘localhost:4567’.
