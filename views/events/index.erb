@@ -15,7 +15,7 @@
 
 <% @events.each do |event| %>
 <tr>
-    <td><a href="/events/<%= event.id %>/edit"><%= event.name %></a></td>
+    <td height="28"><a href="/events/<%= event.id %>/edit"><%= event.name %></a></td>
     <td><%= event.gold_winner.name if event.gold_winner != nil %></td>
     <td><%= event.silver_winner.name if event.silver_winner != nil %></td>
     <td><%= event.bronze_winner.name if event.bronze_winner != nil %></td>

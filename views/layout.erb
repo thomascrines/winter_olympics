@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pyeongchang Winter Olympics 2018: Results Updater</title>
-  <link rel="stylesheet" type="text/css" href="/style.css">
+  <title>PyeongChang Winter Olympics 2018: Results Updater</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/style2.css">
 </head>
 <body>
 <div id="container">
-<!-- <div id="logo">
- <img src="logo.png"/>
- </div> -->
- <nav>
+<div id="logo">
+ <a href="/"><img class="logo" src="logo.png" width="150" height="150" /></a>
+ </div>
+ <header>
+<h3>PyeongChang Winter Olympics 2018: Results Updater</h3>
+</header>
+<menu-links>
+      <a class="nav-link" href="/teams" class="menu-links">Teams</a>
+     <a class="nav-link" href="/athletes" class="menu-links">Athletes</a> 
+     <a class="nav-link" href="/events" class="menu-links">Events</a> 
+     <a class="nav-link" href="/disciplines" class="menu-links">Disciplines</a> 
+</menu-links>
 
-   <ul>
-      <li><a href="/teams">Teams</a> </li>
-     <li><a href="/athletes">Athletes</a> </li>
-     <li><a href="/events">Events</a> </li>
-     <li><a href="/disciplines">Disciplines</a> </li>
-   </ul>
- </nav>
  <main>
  <%= yield %>
  </main>

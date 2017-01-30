@@ -1,6 +1,6 @@
 <h2>Disciplines</h2>
 
-<a href="/disciplines/new">add a discipline</a>
+<a href="/disciplines/new">Add a discipline</a>
 <hr>
 
 <table style="width:100%">
@@ -13,7 +13,7 @@
   <% @disciplines.each do |discipline| %>
 
   <tr>
-  <td><a href="/disciplines/<%= discipline.id %>/edit"><%= discipline.name %></a></td>
+  <td height="28"><a href="/disciplines/<%= discipline.id %>/edit"><%= discipline.name %></a></td>
 
     <td><% discipline.events.each do |event| %>
     <%= event.name %>,

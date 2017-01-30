@@ -12,3 +12,7 @@ require_relative './controllers/disciplines_controller'
 require_relative './controllers/events_controller'
 require_relative './controllers/results_controller'
 require_relative './controllers/teams_controller'
+
+get '/' do
+  erb(:home)
+end

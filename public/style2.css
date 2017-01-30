@@ -1,0 +1,151 @@
+body {
+  font-family: 'Lato', sans-serif;
+  background: url('background.jpeg');
+  text-align: left;
+  color: white;
+  text-shadow: 1px 1px black;
+}
+
+#container {
+width: 1020px;
+height: 680px;
+padding: 10px;
+margin-left: auto;
+margin-right:auto;
+margin-bottom: 40px;
+background: rgba(50, 70, 100, .9);
+position: relative;
+overflow: scroll;
+border-radius: 10px;
+}
+
+#container::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0em;
+}
+
+#container::-webkit-scrollbar-thumb {
+  background-color: #2b4570;
+}
+
+#logo {
+  height: 150;
+  width: 150;
+  float: left;
+  padding-right: 10px;
+}
+
+#show {
+  text-align: center;
+  float: center;
+}
+
+h3 {
+  font-size: 1.9em;
+  text-shadow: none;
+}
+
+header {
+  background-color: white;
+  font-family: 'Lato', sans-serif;
+  color: #2b4570;
+  width: 850px;
+  height: 105px;
+  display: inline-block;
+  text-align: center;
+  text-shadow: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+menu-links {
+  background-color: white;
+  width: 850px;
+  height: 35px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.nav-link{
+  font-family: 'Lato', sans-serif;
+  text-decoration: none;
+  color: #087B39;
+  font-size: 20px;
+  font-weight: 100;
+  margin-right: 5px;
+  border-radius: 5px;
+  position: relative;
+  left: 7px;
+  top: 6.5px;
+  font-family: 'Lato 700', sans-serif;
+  font-size: 1em;
+  padding: 2px 10px;
+  background-color: #2b4570;
+  color: white;
+}
+
+input {
+  font-family: 'Lato 700', sans-serif;
+  background-color: white;
+  border: none;
+  size: 1.5em;
+}
+
+a {
+color: white;
+text-decoration: none;
+}
+
+a:hover {
+color: #C0C0C0;
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+#intro {
+  font-size: 1.05em;
+  width: 600px;
+  text-align: justify;
+}
+
+main {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#gold {
+  width: 20px;
+  height: 20px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  background: gold;
+  float:center;
+}
+
+#silver {
+  width: 20px;
+  height: 20px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  background: #C0C0C0;
+}
+
+#bronze {
+  width: 20px;
+  height: 20px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  background: #CD7F32;
+}
