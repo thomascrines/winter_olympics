@@ -33,15 +33,14 @@ border-radius: 10px;
   width: 150;
   float: left;
   padding-right: 10px;
-}
-
-#show {
-  text-align: center;
-  float: center;
+    display: block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background: url('logo2.png') no-repeat;
+  }
 }
 
 h3 {
-  font-size: 1.9em;
   text-shadow: none;
 }
 
@@ -56,6 +55,7 @@ header {
   text-shadow: none;
   border-radius: 5px;
   margin-bottom: 10px;
+  font-size: 160%
 }
 
 menu-links {
@@ -88,7 +88,8 @@ input {
   font-family: 'Lato 700', sans-serif;
   background-color: white;
   border: none;
-  size: 1.5em;
+  font-size: 90%;
+  border-radius: 3px;
 }
 
 a {
@@ -115,11 +116,25 @@ color: #C0C0C0;
   font-size: 1.05em;
   width: 600px;
   text-align: justify;
+  float: left;
+  padding-right: 30px;
+}
+
+#left-image {
+  float: left;
+  width: 322px;
+  height: 565px;
+  border-radius: 5px;
 }
 
 main {
   padding-left: 30px;
   padding-right: 30px;
+}
+
+#show {
+  text-align: center;
+  float: center;
 }
 
 #gold {

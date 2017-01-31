@@ -1,18 +1,18 @@
-<h2>Add a new athlete</h>
+<h2>Add a new athlete</h2>
 
   <p>
     <form action="/athletes" method="post">
 
-      <label for="name">Name:</label>
-      <input type="text" name="name">
+      <label for="name">Name:&nbsp;&nbsp;</label>
+      <input type="text" name="name">&nbsp;&nbsp;
 
-      <label for="team_id">Team:</label>
+      <label for="team_id">Team:&nbsp;&nbsp;</label>&nbsp;&nbsp;
       <select name="team_id">
         <% @teams = @teams.sort_by { |team| team.name } %>
         <% @teams.each do |team| %>
         <option value ="<%= team.id %>"><%= team.name %></option>
         <% end %>
-      </select>
+      </select>&nbsp;&nbsp;
 
       <input type="submit" value="Add Athlete">
     </form>

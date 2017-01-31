@@ -4,28 +4,28 @@
 
     <input type="hidden" name="_method" value="put">
 
-    <label for="gold_winner">Gold winner:</label>
+    <label for="gold_winner">Gold winner:&nbsp;&nbsp;</label>
     <select name="gold_id">
       <% @athletes = @athletes.sort_by { |athlete| athlete.name } %>
       <% @athletes.each do |athlete| %>
       
       <option value ="<%= athlete.id %>"<%= 'selected' if athlete.id == @result.gold_id %>><%= athlete.name %></option>
       <% end %>
-    </select>
+    </select>&nbsp;&nbsp;
 
-    <label for="silver_winner">Silver winner:</label>
+    <label for="silver_winner">Silver winner:&nbsp;&nbsp;</label>
     <select name="silver_id">
       <% @athletes.each do |athlete| %>
       <option value ="<%= athlete.id %>" <%= 'selected' if athlete.id == @result.silver_id %>><%= athlete.name %></option>
       <% end %>
-    </select>
+    </select>&nbsp;&nbsp;
 
-    <label for="bronze_winner">Bronze winner:</label>
+    <label for="bronze_winner">Bronze winner:&nbsp;&nbsp;</label>
     <select name="bronze_id">
       <% @athletes.each do |athlete| %>
       <option value ="<%= athlete.id %>" <%= 'selected' if athlete.id == @result.bronze_id %>><%= athlete.name %></option>
       <% end %>
-    </select>
+    </select>&nbsp;&nbsp;
 
 
     <input type='submit' value="Update Results">

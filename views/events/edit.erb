@@ -3,21 +3,21 @@
 <form action="/events/<%= @event.id %>" method="post">
 <input type="hidden" name="_method" value="put">
 
-<label for="name">Name:</label>
-<input type="text" name="name" value="<%= @event.name %>">
+<label for="name">Name:&nbsp;&nbsp;</label>
+<input type="text" name="name" value="<%= @event.name %>">&nbsp;&nbsp;
 
-<label for="gender">Field:</label>
+<label for="gender">Field:&nbsp;&nbsp;</label>&nbsp;&nbsp;
 <select name="gender">
   <option value="<%= @event.gender %>">Men</option>
   <option value="<%= @event.gender %>">Women</option>
-</select>
+</select>&nbsp;&nbsp;
 
-  <label for="discipline_id">Discipline:</label>
+  <label for="discipline_id">Discipline:&nbsp;&nbsp;</label>&nbsp;&nbsp;
   <select name="discipline_id">
   <% @disciplines.each do |discipline| %>
     <option value="<%= discipline.id %>"<%= 'selected' if discipline.id == @event.discipline_id %>><%= discipline.name %></option>
     <% end %>
-  </select>
+  </select>&nbsp;&nbsp;
   
 <input type="submit" value="Update">
 </form>

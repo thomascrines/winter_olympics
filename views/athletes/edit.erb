@@ -4,18 +4,18 @@
 
     <input type="hidden" name="_method" value="put">
 
-    <label for="name">Name:</label>
-    <input type="text" name="name" value="<%= @athlete.name %>">
+    <label for="name">Name:&nbsp;&nbsp;</label>
+    <input type="text" name="name" value="<%= @athlete.name %>">&nbsp;&nbsp;
 
-    <label for="gender">Field:</label>
-    <input type="text" name="gender" value="<%= @athlete.gender %>">
+    <label for="gender">Field:&nbsp;&nbsp;</label>
+    <input type="text" name="gender" value="<%= @athlete.gender %>">&nbsp;&nbsp;
     
-    <label for="team_id">Team:</label>
+    <label for="team_id">Team:&nbsp;&nbsp;</label>
     <select name="team_id">
       <% @teams.each do |team| %>
       <option value ="<%= team.id %>" <%= 'selected' if @athlete.team_id == team.id %>><%= team.name %></option>
       <% end %>
-    </select>
+    </select>&nbsp;&nbsp;
 
     <input type='submit' value="Update Athlete">
   </form>

@@ -4,14 +4,14 @@
 
     <input type="hidden" name="_method" value="put">
 
-    <label for="name">Team name:</label>
-    <input type="text" name="name" value="<%= @team.name %>">
+    <label for="name">Team name:&nbsp;&nbsp;</label>
+    <input type="text" name="name" value="<%= @team.name %>">&nbsp;&nbsp;
 
-    <label for="code">Team code:</label>
-    <input type="text" name="code" value="<%= @team.code %>">
+    <label for="code">Team code:&nbsp;&nbsp;</label>
+    <input type="text" name="code" value="<%= @team.code %>">&nbsp;&nbsp;
     
-    <label for="flag_url">Flag:</label>
-    <input type="text" name="flag_url" value="flag/<%= @team.name %>.png">
+    <label for="flag_url">Flag:&nbsp;&nbsp;</label>
+    <input type="text" name="flag_url" value="flag/<%= @team.name %>.png">&nbsp;&nbsp;
 
     <input type='submit' value="Update Team">
   </form>

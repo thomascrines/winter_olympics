@@ -6,28 +6,28 @@
 
   <input type="hidden" name="_method" value="put">
 
-  <label for="gold_id">Gold winner:</label>
+  <label for="gold_id">Gold winner:&nbsp;&nbsp;</label>
   <select name="gold_id">
     <% @athletes = @athletes.sort_by { |athlete| athlete.name } %>
     <% @athletes.each do |athlete| %>
     
     <option value ="<%= athlete.id %>"><%= athlete.name %></option>
     <% end %>
-  </select>
+  </select>&nbsp;&nbsp;
 
-  <label for="silver_id">Silver winner:</label>
+  <label for="silver_id">Silver winner:&nbsp;&nbsp;</label>
   <select name="silver_id">
     <% @athletes.each do |athlete| %>
     <option value ="<%= athlete.id %>"><%= athlete.name %></option>
     <% end %>
-  </select>
+  </select>&nbsp;&nbsp;
 
-  <label for="bronze_id">Bronze winner:</label>
+  <label for="bronze_id">Bronze winner:&nbsp;&nbsp;</label>
   <select name="bronze_id">
     <% @athletes.each do |athlete| %>
     <option value ="<%= athlete.id %>"><%= athlete.name %></option>
     <% end %>
-  </select>
+  </select>&nbsp;&nbsp;
 
 
   <input type='submit' value="Add Result">
