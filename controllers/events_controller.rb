@@ -1,7 +1,7 @@
 #INDEX
 get '/events' do
   user_input = params[:search]
-  # @events = Event.all(user_input)
+  @events = Event.all(user_input)
   erb :'events/index'
 end
 
