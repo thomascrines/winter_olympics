@@ -3,12 +3,21 @@ require 'pg'
 class SqlRunner
 
   def self.run(sql)  
+    
+    if ENV['DATABASE_URL'] == nil
+      uri = URI.parse("http://localhost/winter_olympics")
+    else
+      uri = URI.parse(ENV['DATABASE_URL'])    
+    end
+    
     begin
-      db = PG.connect({dbname: 'winter_olympics', host: 'localhost'})
-      result = db.exec(sql)
+      db = PG.connect( dbname: uri.path[1..-1], host: uri.host)
+      result = db.exec ( sql )
+
     ensure 
       db.close
     end
+    
     return result
   end
 
